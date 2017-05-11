@@ -11,7 +11,7 @@ object PopularMovie{
     val conf = new SparkConf().setMaster("local").setAppName("PopularMovies")
     val sc = new SparkContext(conf)
     
-    val file = sc.textFile("/Users/AVINASH/Documents/Data/ml-100k/u.data")
+    val file = sc.textFile("/Users/AVINASH/Documents/Software/Data/ml-100k/u.data")
     
     val lines = file.map(parsedLines)
     /* val fields = file.map(x=>(x.split("\t")(1).toInt,1)
@@ -19,6 +19,7 @@ object PopularMovie{
      */
     val movieId = lines.map(x=>(x,1))
     val totalMovies = movieId.reduceByKey((x,y)=>x+y)
+    totalMovies.foreach(println)
     val moviesorted = totalMovies.map(x=>(x._2,x._1)).sortByKey(false)
     moviesorted.foreach(println)
     println("most popular movie")
