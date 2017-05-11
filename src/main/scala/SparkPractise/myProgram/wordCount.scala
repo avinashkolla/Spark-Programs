@@ -8,7 +8,7 @@ object wordCount {
     val conf=new SparkConf().setMaster("local").setAppName("WordCount")
     val sc=new SparkContext(conf)
     
-    val file=sc.textFile("/Users/AVINASH/Documents/Notes PDF/Spark by Udemy/SparkScala/book.txt")
+    val file=sc.textFile("/Users/AVINASH/Documents/Software/Data/SparkScala/book.txt")
     
     //val lines=file.map(x=>x.split(" "))
     val flines=file.flatMap(x=>x.split(" "))
