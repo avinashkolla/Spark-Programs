@@ -17,6 +17,7 @@ object wordCount {
     val countf=flines.countByValue()
     
     //countl.foreach(println)
+    println("Words are")
     countf.foreach(println)
     
   }
