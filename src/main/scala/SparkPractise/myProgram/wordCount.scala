@@ -5,7 +5,7 @@ import org.apache.spark._
 object wordCount {
   
   def main(args: Array[String])={
-    val conf=new SparkConf().setMaster("yarn").set("deploy-mode", "cluster").setAppName("WordCount")
+    val conf=new SparkConf().setAppName("WordCount")
     val sc=new SparkContext(conf)
     
     val file=sc.textFile("/Users/AVINASH/spark-1.6.2-bin-hadoop2.6/book.txt")
