@@ -8,7 +8,7 @@ object wordCount {
     val conf=new SparkConf().setAppName("WordCount")
     val sc=new SparkContext(conf)
     
-    val file=sc.textFile("/Users/AVINASH/spark-1.6.2-bin-hadoop2.6/book.txt")
+    val file=sc.textFile("book.txt")
     
     //val lines=file.map(x=>x.split(" "))
     val flines=file.flatMap(x=>x.split(" "))
